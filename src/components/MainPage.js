@@ -4,7 +4,6 @@ import FilterComponent from './Filter';
 import SearchComponent from './Search';
 import FilterReleases from './FilterReleases';
 import Music from './Music';
-import { fetchReleases } from '../services/dynamoService';
 import { useTheme } from '@mui/material/styles';
 import NorthIcon from '@mui/icons-material/North';
 
@@ -50,11 +49,16 @@ const MainPage = () => {
 
     useEffect(() => {
         const getReleases = async () => {
-            const data = await fetchReleases();
-            setReleases(data);
-            setFilteredReleases(data);
-            if (data.length > 0) {
-                setSelectedRelease(data[0]);
+            try {
+                const response = await fetch('/api/getReleases');
+                const data = await response.json();
+                setReleases(data);
+                setFilteredReleases(data);
+                if (data.length > 0) {
+                    setSelectedRelease(data[0]);
+                }
+            } catch (error) {
+                console.error('Error fetching releases', error);
             }
         };
 
@@ -69,7 +73,7 @@ const MainPage = () => {
         } else {
             setSelectedRelease(null);
         }
-    }, [searchTerm, filterType, releases ]);
+    }, [searchTerm, filterType, releases]);
 
     useEffect(() => {
         const handleScroll = () => {
