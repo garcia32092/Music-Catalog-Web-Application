@@ -41,7 +41,7 @@ const Success = () => {
                     </Box>
                     <Box mt={5}>
                         <Typography variant="h5" gutterBottom>
-                            SONG TITLE
+                            Happy Loop
                         </Typography>
                         <audio controls style={{ width: '100%' }}>
                             <source src={audioUrlMP3} type="audio/mpeg" />
