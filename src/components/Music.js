@@ -1,27 +1,34 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import { Container, Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import './Music.css';
 
-const Music = ({ releases, onReleaseSelect }) => {
-    const theme = useTheme();
-    const [activeReleaseIndex, setActiveReleaseIndex] = useState(null);
+class Music extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeReleaseIndex: null,
+        };
+        this.handleReleaseClick = this.handleReleaseClick.bind(this);
+    }
 
-    const handleReleaseClick = (release, index) => {
-        setActiveReleaseIndex(index);
-        onReleaseSelect(release);
+    handleReleaseClick(release, index) {
+        this.setState({ activeReleaseIndex: index });
+        this.props.onReleaseSelect(release);
 
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-    };
+    }
 
-    const renderReleaseButtons = () => {
+    renderReleaseButtons() {
+        const { releases, theme } = this.props;
+        const { activeReleaseIndex } = this.state;
+
         return releases.map((release, index) => (
             <Grid item key={index} xs={6} sm={4} md={3} lg={3}>
                 <Card 
-                    onClick={() => handleReleaseClick(release, index)}
+                    onClick={() => this.handleReleaseClick(release, index)}
                     className={`card ${activeReleaseIndex === index ? 'card-active' : ''}`}
                     sx={{
                         width: '100%',
@@ -71,24 +78,26 @@ const Music = ({ releases, onReleaseSelect }) => {
                 </Card>
             </Grid>
         ));
-    };
+    }
 
-    return (
-        <Container style={{ 
-            marginTop: '10px', 
-            marginBottom: '25px', 
-            display: 'flex', 
-            justifyContent: 'center' 
-        }}>
-            <Grid container spacing={4} style={{ 
-                maxWidth: '100%', 
+    render() {
+        return (
+            <Container style={{ 
+                marginTop: '10px', 
+                marginBottom: '25px', 
                 display: 'flex', 
                 justifyContent: 'center' 
             }}>
-                {renderReleaseButtons()}
-            </Grid>
-        </Container>
-    );
+                <Grid container spacing={4} style={{ 
+                    maxWidth: '100%', 
+                    display: 'flex', 
+                    justifyContent: 'center' 
+                }}>
+                    {this.renderReleaseButtons()}
+                </Grid>
+            </Container>
+        );
+    }
 }
 
 export default Music;

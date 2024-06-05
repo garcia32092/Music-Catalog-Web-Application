@@ -261,7 +261,7 @@ const MainPage = () => {
                 Total Releases Found: {filteredReleases.length}
             </Typography>
 
-            <Music releases={currentReleases} onReleaseSelect={setSelectedRelease} />
+            <Music releases={currentReleases} onReleaseSelect={setSelectedRelease} theme={theme} />
 
             {filteredReleases.length === 0 && searchTerm !== '' && renderNoResultsMessage()}
 
