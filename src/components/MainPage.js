@@ -4,6 +4,7 @@ import FilterComponent from './Filter';
 import SearchComponent from './Search';
 import FilterReleases from './FilterReleases';
 import Music from './Music';
+import Report from './Report';
 import { useTheme } from '@mui/material/styles';
 import NorthIcon from '@mui/icons-material/North';
 
@@ -20,6 +21,7 @@ const MainPage = () => {
     const theme = useTheme();
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(false);
+    const [showReport, setShowReport] = useState(false);
     const officialiframeStyle = window.innerWidth <= 768 ? 
         { maxWidth: '100%', height: '152px' } : 
         { maxWidth: '100%', height: '352px' };
@@ -194,6 +196,17 @@ const MainPage = () => {
         );
     };
 
+    const generateReport = () => {
+        const columns = ["title", "releaseType", "releaseDate", "platform"];
+        const data = filteredReleases.map(release => ({
+            title: release.title,
+            releaseType: release.releaseType,
+            releaseDate: release.releaseDate,
+            platform: release.platform
+        }));
+        return { title: "Music Releases Report", columns, data };
+    };
+
     return (
         <Container style={{
             marginTop: '25px',
@@ -268,6 +281,19 @@ const MainPage = () => {
             {loading && currentReleases.length < filteredReleases.length && (
                 <Typography>Loading...</Typography>
             )}
+
+            <Grid item>
+                <Button
+                    onClick={() => setShowReport(true)}
+                    sx={{
+                        width: { xs: '80px', sm: '150px' },
+                        fontSize: { xs: '0.7rem', sm: '1rem' }
+                    }}>
+                    Generate Report
+                </Button>
+            </Grid>
+
+            {showReport && <Report {...generateReport()} />}
         </Container>
     );
 }
