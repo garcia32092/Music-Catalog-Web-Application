@@ -16,7 +16,7 @@ A dynamic, full-stack web application to showcase and distribute music releases 
 - Deployed the app on Vercel, with GitHub version control for continuous deployment and collaboration.
 
 ## Backstory
-I originally created the app as a personal project for a musician that I know, and I later used it as my project for my D424 Software Engineering Capstone course at WGU. The capstone project required much more formal documentation for the app so I have included those documents that I was required to complete for the course. I believe the documents offer a comprehensive breakdown for everything to do with the application.
+I originally created the app as a personal project for a musician that I know, and I later used it as my project for my D424 Software Engineering Capstone course at WGU. The capstone project required more formal documentation for the app so I have included those [documents](documents/) that I was required to complete for the course. The documents should offer a comprehensive breakdown for everything and anything to do with the application.
 
 ## Demo Link
 URL: [https://music-catalog-web-app.vercel.app/](https://music-catalog-web-app.vercel.app/)
