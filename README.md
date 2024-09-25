@@ -21,4 +21,5 @@ I originally created the app as a personal project for a musician that I know, a
 ## Demo Link
 URL: [https://music-catalog-web-app.vercel.app/](https://music-catalog-web-app.vercel.app/)
 
+## Image
 ![Example image](images/home2.jpg)
