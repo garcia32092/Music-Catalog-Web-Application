@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Music Catalog Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Concept
+A dynamic, full-stack web application to showcase and distribute music releases for an independent artist. The app allows fans to access music in one place even when releases might be located on many different platforms. Users are also able to support the artist directly by purchasing access to exclusive content and using direct links to streaming platforms, music stores, ect.
 
-## Available Scripts
+## Tech Stack
+*React, Node.js, Vercel, Stripe API, AWS S3, Material UI, JSON, GitHub, CSS, HTML*
 
-In the project directory, you can run:
+- Implemented React.js for the front-end, creating responsive and interactive UI elements such as embedded music players, filters, and search components using Material UI.
+- Designed for mobile-first responsiveness, ensuring a seamless user experience across different devices and screen sizes.
+- Implemented advanced filtering and search functionalities, handling a large catalog of music releases efficiently.
+- Utilized Node.js and serverless functions hosted on Vercel to handle payment verification, audio link generation, and secure API requests.
+- Integrated Stripe API for secure payment processing, enabling users to purchase and download exclusive music content.
+- Leveraged AWS S3 for hosting audio files, providing exclusive temporary access to the files for users post-purchase.
+- Integrated localStorage for storing user-specific data, enhancing the personalized user experience across sessions.
+- Deployed the app on Vercel, with GitHub version control for continuous deployment and collaboration.
 
-### `npm start`
+## Backstory
+I originally created the app as a personal project for a musician that I know, and I later used it as my project for my D424 Software Engineering Capstone course at WGU. The capstone project required much more formal documentation for the app so I have included those documents that I was required to complete for the course. I believe the documents offer a comprehensive breakdown for everything to do with the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo Link
+URL: [https://music-catalog-web-app.vercel.app/](https://music-catalog-web-app.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Example image](images/home2.jpg)
